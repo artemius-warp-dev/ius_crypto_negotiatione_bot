@@ -8,11 +8,7 @@ defmodule Streamer.Application do
   def start(_type, _args) do
     children = [
       {Streamer.Repo, []},
-      {Streamer.Supervisor, []},
-      {
-        Phoenix.PubSub,
-        name: Streamer.PubSub, adapter_name: Phoenix.PubSub.PG2
-      }
+      {Streamer.Supervisor, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
